@@ -38,14 +38,14 @@ void loop() {
 }
 ```
 
-- 3D model creation of Infra_Red Sensor board TDRCT-5000.
+- 3D model creation of Infra_Red Sensor board TDRCT-5000.\
 ![TDRCT-5000](/Documentation/Session_Reports/Julius/Pictures/Session_1/CAD_Board.png)
 
 
-- 3D model creation of Motor 4844.
+- 3D model creation of Motor 4844.\
 ![Motor-4844](/Documentation/Session_Reports/Julius/Pictures/Session_1/Motor4844.png)
 
-- 3D model creation of motor holding bracket.
+- 3D model creation of motor holding bracket.\
 ![Bracket](/Documentation/Session_Reports/Julius/Pictures/Session_1/Motor_Bracket.png)
 
 
