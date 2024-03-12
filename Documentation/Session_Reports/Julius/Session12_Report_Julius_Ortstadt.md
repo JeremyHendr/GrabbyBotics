@@ -8,7 +8,7 @@ I wanted to get the LiDAR operational as this would greatly simplify the project
 
 ## During today's session
 - Since I already started to learn about LiDAR, I continued my research on this subject but more specifically on the particular LiDAR that I had.
-The LDS-02 LiDAR is a spare part for a robot vaccum but can also be used as a standalone 2D LiDAR.
+The LDS-02 LiDAR is a spare part for a robot vacuum but can also be used as a standalone 2D LiDAR.
 
 - I tried finding information about this module but this was easier said than done. 
 I found some docs about it from a company called ROBOTIS. 
