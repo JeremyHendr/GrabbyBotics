@@ -18,9 +18,7 @@ and later in rviz.\
 Rviz is a visualization software included in the ROS package which I used for the LiDAR.
 Here is a live view:
 
-<video width="900" height="400" controls>
-  <source src="/Documentation/Session_Reports/Julius/Pictures/Session_15/rviz_live_visual.mp4" type="video/mp4">
-</video>
+https://github.com/JeremyHendr/GrabbyBotics/assets/120115242/fcc1d2d0-ea8c-4255-8718-83cb4c6e21bf
 
 - Since the LiDAR was now correctly working with ROS, I had to setup the Hector SLAM. 
 Hector (Heterogeneous Cooperating Team of Robots) SLAM is a SLAM algorithm that allows the robot to know where it is in a room without odometry data.
@@ -41,15 +39,9 @@ Here is the test setup:\
 Here are two videos, one view is from rviz showing the realtime creation of the map and the other shows the robot navigating so that the map can be created. 
 Note that the videos are sped up.
 
+https://github.com/JeremyHendr/GrabbyBotics/assets/120115242/86aef2d8-5312-4246-a183-24707fe7e197
 
-<video width="900" height="400" controls>
-  <source src="/Documentation/Session_Reports/Julius/Pictures/Session_15/grabby_test.mp4" type="video/mp4">
-</video>
-
-
-<video width="900" height="400" controls>
-  <source src="/Documentation/Session_Reports/Julius/Pictures/Session_15/rviz_hector_slam.mp4" type="video/mp4">
-</video>
+https://github.com/JeremyHendr/GrabbyBotics/assets/120115242/7278811c-f9ad-4bdc-be21-e6ae00db4dca
 
 - You can see in the two videos, that the robot moves in the map. 
 However the quality of the map is poor because the robot was moving to fast.
