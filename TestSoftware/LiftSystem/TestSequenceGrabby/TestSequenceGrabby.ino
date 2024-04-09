@@ -14,7 +14,7 @@
 #define ls_lift_top 47
 
 //relay
-#define pump 50
+#define pump 50 //pin is 50
 #define valve 51
 
 //DC motor
@@ -27,10 +27,11 @@ bool lsf_last=1; //to know if the limit switch slider front was the last pressed
 bool lslt_last=0;
 
 //Bande LED
-#include "Adafruit_NeoPixel.h"
-#define led_strip_pin  5
-#define led_strip_pixel_quant 120
-Adafruit_NeoPixel strip (led_strip_pixel_quant, led_strip_pin, NEO_GRB + NEO_KHZ800);
+// #include "Adafruit_NeoPixel.h"
+// #define led_strip_pin  5
+// #define led_strip_pixel_quant 120
+// Adafruit_NeoPixel strip (led_strip_pixel_quant, led_strip_pin, NEO_GRB + NEO_KHZ800);
+#include "LedStrip.hpp"
 
 //----------------------------------SETUP---------------------------------------------
 void setup() {
@@ -176,9 +177,8 @@ void globalTest(){
 
       //Sucks the package
       digitalWrite(pump, 1);
-      delay(2500);
-      digitalWrite(pump,0);
-
+      delay(1000);
+      
       //Slider pulls the package on the platform
        bool slider_ls_back_pressed = !digitalRead(ls_slider_back);
       digitalWrite(slider_dir, 1);
@@ -189,6 +189,7 @@ void globalTest(){
         delayMicroseconds(step_delay);
         slider_ls_back_pressed = !digitalRead(ls_slider_back);
       }
+      digitalWrite(pump,0);
 
       //Platform starts going down
       digitalWrite(lift_dir, 1);

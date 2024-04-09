@@ -9,10 +9,6 @@
 Adafruit_SSD1306 screen(screen_w, screen_h, &Wire, screen_reset);
 
 
-
-
-
-
 void setup() {
   Serial.begin(115200);
   Wire.begin();
@@ -20,8 +16,6 @@ void setup() {
 }
 
 void loop() {
-
-  
   // Clear the display
   screen.clearDisplay();
 

@@ -6,13 +6,7 @@
 #define led_strip_pixel_quant 120
 Adafruit_NeoPixel strip (led_strip_pixel_quant, led_strip_pin, NEO_GRB + NEO_KHZ800);
 
-void ledLiftUp() {
-  Circling(10, 1, strip.Color(0,255,0));
-}
 
-void ledLiftDown(){
-  Circling(10, 0, strip.Color(255,0,0));
-}
 
 void Circling(int led_quant, bool clockwise, uint32_t color) {
   static int pos;
@@ -56,6 +50,14 @@ void Circling(int led_quant, bool clockwise, uint32_t color) {
 
   strip.show(); // Update the LED strip
   delay(30); // Adjust the delay as needed to control the speed of the animation
+}
+
+void ledLiftUp() {
+  Circling(10, 1, strip.Color(0,255,0));
+}
+
+void ledLiftDown(){
+  Circling(10, 0, strip.Color(255,0,0));
 }
 
 #endif LEDSTRIP_HPP
