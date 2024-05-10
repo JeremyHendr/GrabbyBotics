@@ -1,0 +1,30 @@
+in his case 1 is left and 2 right
+1 arre the first images of the list
+beginning of the list is camera at his right
+
+Left in the code means left in real life when looking from behind the cameras
+
+THe LEFT CAMERA IS THE ONE WHEN WE LOOK FROM THE POINT OF VIEW OF THE CAMERA
+
+Rotation matrix:
+[[ 0.99898002 -0.03603892  0.02720517]
+ [ 0.03565974  0.99926172  0.01429667]
+ [-0.02770032 -0.01331196  0.99952763]]
+
+
+Axis-Angle {[x, y, z], angle (degrees)}
+{ [ -0.2923628, 0.5814241, 0.7592562 ], 2.7063056 }
+
+
+With 111 pictures dim: 3840*1080
+R:
+[[ 9.99606535e-01  1.74459934e-02 -2.19639006e-02]
+ [-1.74440617e-02  9.99847802e-01  2.79557153e-04]
+ [ 2.19654349e-02  1.03692480e-04  9.99758725e-01]]
+T:
+[[62.97658109]
+ [-0.75637726]
+ [ 2.94508295]]
+RMS:
+intrin: 2.172 and 2.283
+extrin: 46.559
