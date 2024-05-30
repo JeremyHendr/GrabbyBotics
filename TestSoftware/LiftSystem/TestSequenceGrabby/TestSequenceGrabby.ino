@@ -1,25 +1,25 @@
 //Nema17Stepper
-#define slider_dir 53
-#define slider_cmd 52
+#define slider_dir 34
+#define slider_cmd 35
 
 //led
-#define led_R 8
-#define led_G 9
-#define led_B 10
+#define led_R 5
+#define led_G 6
+#define led_B 7
 
 //LS
-#define ls_slider_back 49
-#define ls_slider_front 48
-#define ls_lift_bottom 46
-#define ls_lift_top 47
+#define ls_slider_back 32
+#define ls_slider_front 33
+#define ls_lift_bottom 49
+#define ls_lift_top 48 //29
 
 //relay
-#define pump 50 //pin is 50
-#define valve 51
+#define pump 31 //pin is 50
+#define valve 30
 
 //DC motor
-#define lift_dir 2
-#define lift_cmd 3
+#define lift_dir 47
+#define lift_cmd 46
 
 
 //variable
@@ -28,10 +28,30 @@ bool lslt_last=0;
 
 //Bande LED
 // #include "Adafruit_NeoPixel.h"
-// #define led_strip_pin  5
+// #define led_strip_pin  4
 // #define led_strip_pixel_quant 120
-// Adafruit_NeoPixel strip (led_strip_pixel_quant, led_strip_pin, NEO_GRB + NEO_KHZ800);
+// Adafruit_NeoPixel strip(led_strip_pixel_quant, led_strip_pin, NEO_GRB + NEO_KHZ800);
 #include "LedStrip.hpp"
+
+//OLED screen
+#include <Wire.h>
+#include <Adafruit_SSD1306.h>
+#define screen_w 128 //
+#define screen_h 32 //64 works but small, 32 better
+Adafruit_SSD1306 screen(screen_w, screen_h, &Wire, -1);
+
+
+//TOF sensor
+#include <VL53L0X.h>
+#include <movingAvg.h>
+VL53L0X tof;
+movingAvg tof_avg(15);
+
+// //PID
+#include <PID_v1.h>
+double Setpoint, Input, Output;
+double Kp=20, Ki=0, Kd=0;
+PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
 
 //----------------------------------SETUP---------------------------------------------
 void setup() {
@@ -69,6 +89,26 @@ void setup() {
     strip.clear();
   }
 
+  //OLED screen
+  screen.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  screen.clearDisplay();
+  screen.invertDisplay(0);
+  screen.setTextSize(1);
+  screen.setTextColor(SSD1306_WHITE);
+  screen.setCursor(40, 0);
+  screen.println("Welcome to");
+  screen.setCursor(35, 10);
+  screen.println("GrabbyBotics");
+  screen.display();
+
+
+  //TOF sensor
+  tof.setAddress(0x31);
+  tof.setTimeout(500);
+  tof.init(true);
+  tof.startContinuous();
+  tof_avg.begin();
+
   digitalWrite(led_R,1);
   delay(500);
   digitalWrite(led_R,0);
@@ -79,32 +119,98 @@ void setup() {
   delay(500);
   digitalWrite(led_B,0);
   Serial.println("Setup done");
+  //setup pid
+  myPID.SetMode(AUTOMATIC);
+  myPID.SetOutputLimits(-255,255);
+  Setpoint = 180;
 }
 
 
 //----------------------------------LOOP---------------------------------------------
 void loop() {
   // TEST SEQUENCE:
-  // lsTest(); //green light is on when ls pressed
+  lsTest(); //green light is on when ls pressed
   // relayTest(); //activate relays in turns
   // stepperTest2(); //one turn cw one cc
   // sliderTest(); //slider moves back to front
   // sliderTest2(); //slider moves front to back and ativate pump and valve
   // DCmotorTest(); //3sec cc and 3sec cw
   // liftTest(); //Lift goes all the way up then all the way down
-  globalTest(); //platform goes up -> grip sequence -> platform down -> release sequence
+  // globalTest(); //platform goes up -> grip sequence -> platform down -> release sequence
 
   // lcdScreen();
+  // TOF();
   // lcdAndTOF();
-  // platformAndTOF();
-  // platformPID();
+  //platformAndTOF();
+  //  platformPID(); //85mm to 277mm
   // globalGripAndReleaseSequence();
 
 }
 
 //----------------------------------FUNCTIONS----------------------------------------
+void platformPID(){
+  int dst = tof.readRangeContinuousMillimeters();
+  int dst_avg = tof_avg.reading(dst);
+  Serial.print(dst_avg);
+  Input = dst_avg;
+  myPID.Compute();
+  if(Output <  0){
+    digitalWrite(lift_dir, HIGH);
+  }
+  else{
+    digitalWrite(lift_dir, LOW);
+  }
+  Serial.print(" output:");
+  Serial.println(Output);
+  if (abs(Output)>20) {
+    analogWrite(lift_cmd, abs(Output));
+  }
+  else {
+    analogWrite(lift_cmd, 0);
+  }
 
+  screen.clearDisplay();
+  screen.setTextSize(1);
+  screen.setTextColor(SSD1306_WHITE);
+  screen.setCursor(0, 0);
+  screen.println("Height: "+String(dst_avg)+" mm");
+  screen.display();
+}
 
+void lcdAndTOF(){
+  int dst = tof.readRangeContinuousMillimeters();
+  int dst_avg = tof_avg.reading(dst);
+
+  screen.clearDisplay();
+  screen.setTextSize(1);
+  screen.setTextColor(SSD1306_WHITE);
+  screen.setCursor(0, 0);
+  screen.println("Height: "+String(dst_avg)+" mm");
+  screen.display();
+}
+
+void TOF(){
+  int dst = tof.readRangeContinuousMillimeters();
+  int dst_avg = tof_avg.reading(dst);
+  Serial.println("distance: "+String(dst_avg));
+  delay(50);
+}
+
+void lcdScreen(){
+  screen.clearDisplay();
+
+  //yellow info
+  screen.setTextSize(1);
+  screen.setTextColor(SSD1306_WHITE);
+  screen.setCursor(0, 0);
+  screen.println("H:xxx  D:xxx  p:x");
+  //blue info
+  screen.println("Picking up package");
+  screen.println();
+  screen.println("Holding at XXXmm");
+  screen.display();
+  delay(500);
+}
 
 //-----------------------------Test Sequence Functions-------------------------------------
 void globalTest(){
@@ -150,7 +256,7 @@ void globalTest(){
 
       //Platform starts going up
       digitalWrite(lift_dir, 0);
-      analogWrite(lift_cmd, 100);
+      analogWrite(lift_cmd, 255);
       digitalWrite(led_G, 0);
       digitalWrite(led_R, 1);
       ls_bottom_last = 1;
@@ -193,7 +299,7 @@ void globalTest(){
 
       //Platform starts going down
       digitalWrite(lift_dir, 1);
-      analogWrite(lift_cmd, 100);
+      analogWrite(lift_cmd, 255);
       digitalWrite(led_G, 1);
       digitalWrite(led_R, 0);
       ls_bottom_last = 0;
@@ -211,7 +317,10 @@ void liftTest(){
   bool lsb = digitalRead(ls_lift_bottom);
   bool lst = digitalRead(ls_lift_top);
   if (!lsb && lslt_last) {
-    
+    digitalWrite(lift_dir, 1);
+    digitalWrite(lift_cmd, 1);
+    digitalWrite(led_G, 0);
+    digitalWrite(led_R, 1);
     lslt_last = 0;
   }
   else if (!lst && !lslt_last) {
@@ -331,13 +440,13 @@ void relayTest() { //activates in turns both pump and valve relay
   delay(1000);
   digitalWrite(led_G, 0);
   digitalWrite(pump, 0);
-  delay(2000);
+  delay(1000);
   digitalWrite(valve, 1);
   digitalWrite(led_R, 1);
   delay(1000);
   digitalWrite(led_R, 0);
   digitalWrite(valve, 0);
-  delay(5000);
+  delay(2000);
 }
 
 void lsTest(){ //green light on if one switch is closed
