@@ -1,0 +1,7 @@
+<!-- Launch file for IMU data visualization with Grabby Robot -->
+<!-- Launches RVIZ visualization with custom settings -->
+
+<launch>
+    <!-- Start RVIZ with custom view -->
+    <node pkg="rviz" type="rviz" name="show_rviz" args="-d $(find mpu6050_custom_driver)/rviz/demo_config.rviz" />
+</launch>

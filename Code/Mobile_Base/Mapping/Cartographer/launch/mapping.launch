@@ -1,0 +1,48 @@
+<!-- Launch file for mapping with Grabby Robot -->
+<!-- Uses Google Cartographer -->
+
+<launch>
+    <!-- Load robot description and start state publisher -->
+    <param name="robot_description" textfile="$(find cartographer_mapping)/urdf/grabby_robot.urdf" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- Declare an argument for the serial port with a default value -->
+    <arg name="serial_port" default="/dev/ttyUSB0"/>
+
+    <!-- Start RPLIDAR sensor node which provides LaserScan data -->
+    <node name="rplidarNode" type="rplidarNode" pkg="rplidar_ros" output="screen">
+        <param name="serial_port" type="string" value="$(arg serial_port)"/>
+        <!-- Baudrate for A1 LiDAR is 115200 -->
+        <param name="serial_baudrate" type="int" value="115200"/> 
+        <param name="frame_id" type="string" value="laser"/>
+        <param name="inverted" type="bool" value="false"/>
+        <param name="angle_compensate" type="bool" value="true"/>
+    </node> 
+
+    <!-- Start Google Cartographer node with custom configuration file -->
+    <!-- Use only LiDAR configuration -->
+    <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args="
+        -configuration_directory 
+            $(find cartographer_mapping)/config
+        -configuration_basename mapping_basic.lua" output="screen">
+    </node>
+
+    <!-- Use LiDAR / IMU configuration -->
+    <!-- 
+    <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args="
+        -configuration_directory 
+            $(find cartographer_mapping)/config
+        -configuration_basename mapping_imu.lua" output="screen">
+    </node>
+    -->
+
+    <!-- Use LiDAR / IMU / Odometry configuration -->
+    <!-- 
+    <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args="
+        -configuration_directory 
+            $(find cartographer_mapping)/config
+        -configuration_basename mapping_imu_odom.lua" output="screen">
+    </node>
+    -->
+
+</launch>

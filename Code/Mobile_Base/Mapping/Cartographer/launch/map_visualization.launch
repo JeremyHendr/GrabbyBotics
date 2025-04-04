@@ -1,0 +1,7 @@
+<!-- Launch file for mapping with Grabby Robot -->
+<!-- Launches RVIZ visualization with custom settings -->
+
+<launch>
+    <!-- Start RVIZ with custom view -->
+    <node pkg="rviz" type="rviz" name="show_rviz" args="-d $(find cartographer_mapping)/rviz/demo.rviz" />
+</launch>
