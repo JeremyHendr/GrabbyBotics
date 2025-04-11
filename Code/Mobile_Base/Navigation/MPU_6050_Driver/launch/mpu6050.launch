@@ -1,0 +1,8 @@
+<!-- Launch file for Grabby the Warehouse robot project -->
+<!-- Launches the MPU6050 Driver -->
+
+<launch>
+    <!-- Launch the node for the mpu6050 -->
+    <node pkg="mpu6050_custom_driver" type="mpu6050_publisher.py" name="mpu6050_node" />
+
+</launch>

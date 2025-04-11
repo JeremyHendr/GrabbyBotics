@@ -1,0 +1,19 @@
+<!-- Launch file for navigation with Grabby Robot -->
+<!-- Converts Rviz position click to usable data for nav_stack -->
+
+<launch>
+    <!-- Launch RVIZ -->
+    <!-- Publish: /initialpose, /move_base_simple/goal -->
+    <node pkg="rviz" type="rviz" name="rviz" />
+    
+    <!-- Launch conversion node -->
+    <!-- Subscribe: /initialpose, /move_base_simple/goal -->
+    <!-- Publish: /initial_2d, /goal_2d -->
+    <node pkg="localization_data_pub" type="rviz_click_to_2d" name="rviz_click_to_2d" />
+
+    <!-- Launch wheel odometry node -->
+    <!-- Subscribe: /m1_ticks, /m2_ticks, /initial_2d -->
+    <!-- Publish: /odom_data_euler, /odom_data_quat -->
+    <node pkg="localization_data_pub" type="ekf_odom_pub" name="ekf_odom_pub" />
+
+</launch>

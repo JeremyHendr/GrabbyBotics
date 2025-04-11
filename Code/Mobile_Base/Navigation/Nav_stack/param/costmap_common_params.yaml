@@ -1,0 +1,51 @@
+obstacle_range: 0.5
+raytrace_range: 0.5
+# Points for the footprint of the robot
+# Size of the robot: 
+#   length = 0.325 m 
+#   width = 0.28 m
+#   height = 0.11 m (for the base)
+# (0.1625, 0.14)   --------   (0.1625, -0.14)
+#      |                      	      |
+#      |          Center (0,0)        |
+#      |                              |
+# (-0.1625, 0.14)   --------   (-0.1625, -0.14)
+# 
+# Standard axis in ROS
+#    ^ y (left of the robot)
+#    |
+#    . __> x (forward direction of robot)
+#
+footprint: [[0.1625, 0.14], [-0.1625, 0.14], [-0.1625, -0.14], [0.1625, -0.14]]
+footprint_padding: 0.02 # Add more padding for footprint of the robot
+
+map_topic: /map
+subscribe_to_updates: true
+global_frame: odom
+robot_base_frame: base_link
+update_frequency: 30.0
+publish_frequency: 30.0
+rolling_window: false
+
+plugins:
+  - {name: static_layer, type: "costmap_2d::StaticLayer"}
+  - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+  - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+
+static_layer:
+  map_topic: /map
+  subscribe_to_updates: false
+
+obstacle_layer:
+    footprint_clearing_enabled: true # Don't mark obstacles within the footprint as obstacles
+    observation_sources: laser_scan_sensor
+    laser_scan_sensor: 
+      sensor_frame: laser
+      data_type: LaserScan
+      topic: scan
+      marking: true
+      clearing: true
+
+inflation_layer:
+  inflation_radius: 0.2
+
