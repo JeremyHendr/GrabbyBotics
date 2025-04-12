@@ -15,6 +15,7 @@ This project has been in development for the last two years as part of our Maste
 In this section you can find all the necessary codes that are needed to either achieve a specific function of the robot or to determine certain physical parameters of the robot. 
 For instance, the mobile base has an Excel sheet that we created to determine the relationship between the robot's speed and the applied PWM to the motors.\
 It also has all the necessary codes for mapping and navigation and other features.
+Also, there is all the code and development steps for the lifting mechanism and its associated functions.
 
 ## Hardware section
 The Hardware section contains all the different 3D and 2D models that are necessary to build the robot from scratch.
