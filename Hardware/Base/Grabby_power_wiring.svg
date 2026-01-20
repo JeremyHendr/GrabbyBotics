@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='13.2359in' height='6.26544in' viewBox='0 0 952.986 451.112' >
+<g partID='854281460'><line stroke-linecap='round' stroke='#8c0000' x1='246.854' y1='19.0548' x2='290.413' y2='19.0548' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='246.854' y1='19.0548' x2='290.413' y2='19.0548' stroke-width='1.6' /></g><g partID='854281540'><line stroke-linecap='round' stroke='#8c0000' x1='246.336' y1='19.0548' x2='206.925' y2='19.0548' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='246.336' y1='19.0548' x2='206.925' y2='19.0548' stroke-width='1.6' /></g><g partID='854274880'><line stroke-linecap='round' stroke='#8c0000' x1='245.133' y1='163.123' x2='245.133' y2='150.133' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='245.133' y1='163.123' x2='245.133' y2='150.133' stroke-width='1.6' /></g><g partID='854273450'><line stroke-linecap='round' stroke='#8c0000' x1='230.783' y1='163.123' x2='245.133' y2='163.123' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='230.783' y1='163.123' x2='245.133' y2='163.123' stroke-width='1.6' /></g><g partID='854281550'><line stroke-linecap='round' stroke='#8c0000' x1='246.336' y1='62.6136' x2='246.336' y2='19.0548' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='246.336' y1='62.6136' x2='246.336' y2='19.0548' stroke-width='1.6' /></g><g partID='854281470'><line stroke-linecap='round' stroke='#8c0000' x1='246.854' y1='46.4384' x2='246.854' y2='19.0548' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='246.854' y1='46.4384' x2='246.854' y2='19.0548' stroke-width='1.6' /></g><g partID='854281560'><line stroke-linecap='round' stroke='#8c0000' x1='246.336' y1='150.25' x2='246.336' y2='62.6136' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='246.336' y1='150.25' x2='246.336' y2='62.6136' stroke-width='1.6' /></g><g partID='854281480'><line stroke-linecap='round' stroke='#8c0000' x1='246.854' y1='132.1' x2='246.854' y2='46.4384' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='246.854' y1='132.1' x2='246.854' y2='46.4384' stroke-width='1.6' /></g><g partID='854271840'><line stroke-linecap='round' stroke='#8c0000' x1='230.783' y1='273.802' x2='230.783' y2='163.123' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='230.783' y1='273.802' x2='230.783' y2='163.123' stroke-width='1.6' /></g><g partID='854273690'><line stroke-linecap='round' stroke='#000000' x1='584.662' y1='336.43' x2='642.72' y2='336.43' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='584.662' y1='336.43' x2='642.72' y2='336.43' stroke-width='1.6' /></g><g partID='854273650'><line stroke-linecap='round' stroke='#000000' x1='567.374' y1='256.888' x2='642.262' y2='256.888' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='567.374' y1='256.888' x2='642.262' y2='256.888' stroke-width='1.6' /></g><g partID='854273350'><line stroke-linecap='round' stroke='#000000' x1='567.374' y1='333.646' x2='567.374' y2='256.888' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='567.374' y1='333.646' x2='567.374' y2='256.888' stroke-width='1.6' /></g><g partID='854273300'><line stroke-linecap='round' stroke='#000000' x1='570.865' y1='336.43' x2='584.662' y2='336.43' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='570.865' y1='336.43' x2='584.662' y2='336.43' stroke-width='1.6' /></g><g partID='854273710'><line stroke-linecap='round' stroke='#8c0000' x1='639.519' y1='307.174' x2='639.519' y2='335.059' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='639.519' y1='307.174' x2='639.519' y2='335.059' stroke-width='1.6' /></g><g partID='854273570'><line stroke-linecap='round' stroke='#8c0000' x1='590.605' y1='307.174' x2='639.519' y2='307.174' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='590.605' y1='307.174' x2='639.519' y2='307.174' stroke-width='1.6' /></g><g partID='854273540'><line stroke-linecap='round' stroke='#8c0000' x1='590.605' y1='213.459' x2='590.605' y2='307.174' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='590.605' y1='213.459' x2='590.605' y2='307.174' stroke-width='1.6' /></g><g partID='854273420'><line stroke-linecap='round' stroke='#8c0000' x1='245.005' y1='272.888' x2='245.005' y2='213.574' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='245.005' y1='272.888' x2='245.005' y2='213.574' stroke-width='1.6' /></g><g partID='854273400'><line stroke-linecap='round' stroke='#8c0000' x1='245.005' y1='213.574' x2='590.605' y2='213.459' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='245.005' y1='213.574' x2='590.605' y2='213.459' stroke-width='1.6' /></g><g partID='854273370'><line stroke-linecap='round' stroke='#8c0000' x1='243.176' y1='272.888' x2='245.005' y2='272.888' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='243.176' y1='272.888' x2='245.005' y2='272.888' stroke-width='1.6' /></g><g partID='854273670'><line stroke-linecap='round' stroke='#8c0000' x1='641.119' y1='214.374' x2='641.119' y2='256.774' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='641.119' y1='214.374' x2='641.119' y2='256.774' stroke-width='1.6' /></g><g partID='854273600'><line stroke-linecap='round' stroke='#8c0000' x1='590.605' y1='214.374' x2='641.119' y2='214.374' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='590.605' y1='214.374' x2='641.119' y2='214.374' stroke-width='1.6' /></g><g partID='854274680'><line stroke-linecap='round' stroke='#000000' x1='571.862' y1='393.574' x2='619.405' y2='393.574' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='571.862' y1='393.574' x2='619.405' y2='393.574' stroke-width='1.6' /></g><g partID='854273810'><line stroke-linecap='round' stroke='#000000' x1='763.405' y1='341.459' x2='741.919' y2='341.459' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='763.405' y1='341.459' x2='741.919' y2='341.459' stroke-width='1.6' /></g><g partID='854273790'><line stroke-linecap='round' stroke='#000000' x1='763.405' y1='393.574' x2='763.405' y2='341.459' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='763.405' y1='393.574' x2='763.405' y2='341.459' stroke-width='1.6' /></g><g partID='854273770'><line stroke-linecap='round' stroke='#000000' x1='619.405' y1='393.574' x2='763.405' y2='393.574' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='619.405' y1='393.574' x2='763.405' y2='393.574' stroke-width='1.6' /></g><g partID='854273740'><line stroke-linecap='round' stroke='#000000' x1='571.862' y1='346.03' x2='571.862' y2='393.573' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='571.862' y1='346.03' x2='571.862' y2='393.573' stroke-width='1.6' /></g><g partID='854273890'><line stroke-linecap='round' stroke='#000000' x1='428.434' y1='335.974' x2='547.519' y2='335.974' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='428.434' y1='335.974' x2='547.519' y2='335.974' stroke-width='1.6' /></g><g partID='854273860'><line stroke-linecap='round' stroke='#000000' x1='428.434' y1='297.574' x2='428.434' y2='335.974' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='428.434' y1='297.574' x2='428.434' y2='335.974' stroke-width='1.6' /></g><g partID='854273910'><line stroke-linecap='round' stroke='#000000' x1='372.548' y1='347.402' x2='485.005' y2='347.402' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='372.548' y1='347.402' x2='485.005' y2='347.402' stroke-width='1.6' /></g><g partID='854273970'><line stroke-linecap='round' stroke='#000000' x1='417.348' y1='351.517' x2='417.348' y2='413.231' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='417.348' y1='351.517' x2='417.348' y2='413.231' stroke-width='1.6' /></g><g partID='854273940'><line stroke-linecap='round' stroke='#000000' x1='488.205' y1='351.517' x2='417.348' y2='351.517' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='488.205' y1='351.517' x2='417.348' y2='351.517' stroke-width='1.6' /></g><g partID='854274050'><line stroke-linecap='round' stroke='#8c0000' x1='462.605' y1='213.916' x2='462.605' y2='414.602' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='462.605' y1='213.916' x2='462.605' y2='414.602' stroke-width='1.6' /></g><g partID='854274340'><line stroke-linecap='round' stroke='#d6d63a' x1='299.827' y1='220.774' x2='423.748' y2='220.774' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='299.827' y1='220.774' x2='423.748' y2='220.774' stroke-width='1.6' /></g><g partID='854274320'><line stroke-linecap='round' stroke='#d6d63a' x1='768.89' y1='326.62' x2='740.442' y2='326.62' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='768.89' y1='326.62' x2='740.442' y2='326.62' stroke-width='1.6' /></g><g partID='854274210'><line stroke-linecap='round' stroke='#d6d63a' x1='768.89' y1='220.774' x2='768.89' y2='326.62' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='768.89' y1='220.774' x2='768.89' y2='326.62' stroke-width='1.6' /></g><g partID='854274110'><line stroke-linecap='round' stroke='#d6d63a' x1='423.748' y1='220.774' x2='768.891' y2='220.774' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='423.748' y1='220.774' x2='768.891' y2='220.774' stroke-width='1.6' /></g><g partID='854274080'><line stroke-linecap='round' stroke='#d6d63a' x1='299.827' y1='268.527' x2='299.827' y2='220.774' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='299.827' y1='268.527' x2='299.827' y2='220.774' stroke-width='1.6' /></g><g partID='854274270'><line stroke-linecap='round' stroke='#000000' x1='388.934' y1='343.174' x2='489.919' y2='343.174' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='388.934' y1='343.174' x2='489.919' y2='343.174' stroke-width='1.6' /></g><g partID='854274240'><line stroke-linecap='round' stroke='#000000' x1='388.934' y1='301.02' x2='388.934' y2='343.174' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='388.934' y1='301.02' x2='388.934' y2='343.174' stroke-width='1.6' /></g><g partID='854274290'><line stroke-linecap='round' stroke='#8c0000' x1='376.134' y1='213.881' x2='376.134' y2='273.943' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='376.134' y1='213.881' x2='376.134' y2='273.943' stroke-width='1.6' /></g><g partID='854274420'><line stroke-linecap='round' stroke='#d6d63a' x1='287.027' y1='235.05' x2='160.012' y2='235.05' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='287.027' y1='235.05' x2='160.012' y2='235.05' stroke-width='1.6' /></g><g partID='854274400'><line stroke-linecap='round' stroke='#d6d63a' x1='160.012' y1='235.05' x2='160.012' y2='339.912' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='160.012' y1='235.05' x2='160.012' y2='339.912' stroke-width='1.6' /></g><g partID='854274370'><line stroke-linecap='round' stroke='#d6d63a' x1='287.027' y1='273.943' x2='287.027' y2='235.05' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='287.027' y1='273.943' x2='287.027' y2='235.05' stroke-width='1.6' /></g><g partID='854274440'><line stroke-linecap='round' stroke='#d6d63a' x1='423.396' y1='220.774' x2='423.396' y2='293.094' stroke-width='3.2' /><line stroke-linecap='round' stroke='#fff800' x1='423.396' y1='220.774' x2='423.396' y2='293.094' stroke-width='1.6' /></g><g partID='854278610'><line stroke-linecap='round' stroke='#000000' x1='175.053' y1='307.32' x2='180.246' y2='328.668' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='175.053' y1='307.32' x2='180.246' y2='328.668' stroke-width='1.6' /></g><g partID='854274540'><line stroke-linecap='round' stroke='#000000' x1='382.042' y1='321.697' x2='382.042' y2='339.912' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='382.042' y1='321.697' x2='382.042' y2='339.912' stroke-width='1.6' /></g><g partID='854278620'><line stroke-linecap='round' stroke='#000000' x1='180.246' y1='328.668' x2='209.672' y2='328.668' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='180.246' y1='328.668' x2='209.672' y2='328.668' stroke-width='1.6' /></g><g partID='854274520'><line stroke-linecap='round' stroke='#000000' x1='382.042' y1='339.912' x2='482.473' y2='339.912' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='382.042' y1='339.912' x2='482.473' y2='339.912' stroke-width='1.6' /></g><g partID='854278630'><line stroke-linecap='round' stroke='#000000' x1='83.8912' y1='307.32' x2='175.053' y2='307.32' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='83.8912' y1='307.32' x2='175.053' y2='307.32' stroke-width='1.6' /></g><g partID='854274500'><line stroke-linecap='round' stroke='#000000' x1='209.242' y1='321.697' x2='382.042' y2='321.697' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='209.242' y1='321.697' x2='382.042' y2='321.697' stroke-width='1.6' /></g><g partID='854278640'><line stroke-linecap='round' stroke='#000000' x1='83.8912' y1='337.322' x2='83.8912' y2='307.32' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='83.8912' y1='337.322' x2='83.8912' y2='307.32' stroke-width='1.6' /></g><g partID='854274470'><line stroke-linecap='round' stroke='#000000' x1='209.242' y1='345.327' x2='209.242' y2='321.696' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='209.242' y1='345.327' x2='209.242' y2='321.696' stroke-width='1.6' /></g><g partID='854274610'><line stroke-linecap='round' stroke='#000000' x1='552.381' y1='432.555' x2='638.938' y2='432.555' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='552.381' y1='432.555' x2='638.938' y2='432.555' stroke-width='1.6' /></g><g partID='854274580'><line stroke-linecap='round' stroke='#000000' x1='552.381' y1='363.543' x2='552.381' y2='432.556' stroke-width='3.2' /><line stroke-linecap='round' stroke='#404040' x1='552.381' y1='363.543' x2='552.381' y2='432.556' stroke-width='1.6' /></g><g partID='854274660'><line stroke-linecap='round' stroke='#8c0000' x1='590.646' y1='422.665' x2='642.428' y2='422.665' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='590.646' y1='422.665' x2='642.428' y2='422.665' stroke-width='1.6' /></g><g partID='854274630'><line stroke-linecap='round' stroke='#8c0000' x1='591.228' y1='306.882' x2='590.646' y2='422.664' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='591.228' y1='306.882' x2='590.646' y2='422.664' stroke-width='1.6' /></g><g partID='854278490'><line stroke-linecap='round' stroke='#8c0000' x1='390.265' y1='185.001' x2='79.276' y2='185.001' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='390.265' y1='185.001' x2='79.276' y2='185.001' stroke-width='1.6' /></g><g partID='854274750'><line stroke-linecap='round' stroke='#8c0000' x1='396.319' y1='393.574' x2='357.919' y2='393.574' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='396.319' y1='393.574' x2='357.919' y2='393.574' stroke-width='1.6' /></g><g partID='854278500'><line stroke-linecap='round' stroke='#8c0000' x1='79.276' y1='185.001' x2='79.276' y2='345.4' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='79.276' y1='185.001' x2='79.276' y2='345.4' stroke-width='1.6' /></g><g partID='854274730'><line stroke-linecap='round' stroke='#8c0000' x1='357.919' y1='393.574' x2='357.919' y2='360.507' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='357.919' y1='393.574' x2='357.919' y2='360.507' stroke-width='1.6' /></g><g partID='854278510'><line stroke-linecap='round' stroke='#8c0000' x1='390.265' y1='214.427' x2='390.265' y2='185.001' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='390.265' y1='214.427' x2='390.265' y2='185.001' stroke-width='1.6' /></g><g partID='854274700'><line stroke-linecap='round' stroke='#8c0000' x1='396.319' y1='211.707' x2='396.319' y2='393.573' stroke-width='3.2' /><line stroke-linecap='round' stroke='#cc1414' x1='396.319' y1='211.707' x2='396.319' y2='393.573' stroke-width='1.6' /></g><g partID='854274830'><line stroke-linecap='round' stroke='#00a527' x1='739.786' y1='252.774' x2='835.252' y2='252.774' stroke-width='3.2' /><line stroke-linecap='round' stroke='#25cc35' x1='739.786' y1='252.774' x2='835.252' y2='252.774' stroke-width='1.6' /></g><g partID='854277190'><g transform='translate(0,337.179)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Main 12V Top</text>
+ </g>
+</g>
+</g></g><g partID='854271870'><g transform='translate(154.662,169.802)' ><g>
+ <rect stroke-width="5.6" width="62.0571" x="2.8" y="2.8" height="26.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Main 12V</text>
+ </g>
+</g>
+</g></g><g partID='854271890'><g transform='translate(635.576,236.088)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">RPi Buck</text>
+ </g>
+</g>
+</g></g><g partID='854271910'><g transform='translate(633.29,317.459)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Main Buck</text>
+ </g>
+</g>
+</g></g><g partID='854271930'><g transform='translate(365.862,410.259)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Motor driver</text>
+ </g>
+</g>
+</g></g><g partID='854271950'><g transform='translate(201.748,269.916)' ><g>
+ <rect stroke-width="5.6" width="57.0286" x="2.8" y="2.8" height="28.5714" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Amp 12V</text>
+ </g>
+</g>
+</g></g><g partID='854271970'><g transform='translate(268.491,267.174)' ><g>
+ <rect stroke-width="5.6" width="51.0857" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Amp 5V</text>
+ </g>
+</g>
+</g></g><g partID='854271990'><g transform='translate(328.093,268.686)' ><g>
+ <rect stroke-width="5.6" width="52.7619" x="2.8" y="2.8" height="30.4381" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Volt 12V</text>
+ </g>
+</g>
+</g></g><g partID='854272010'><g transform='translate(401.625,290.277)' ><g>
+ <rect stroke-width="5.6" width="48.3429" x="2.8" y="2.8" height="30.8571" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Volt 5V</text>
+ </g>
+</g>
+</g></g><g partID='854272030'><g transform='translate(265.291,333.459)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Arduino Nano</text>
+ </g>
+</g>
+</g></g><g partID='854272050'><g transform='translate(480.605,331.174)' ><g>
+ <rect stroke-width="5.6" width="90.1088" x="2.8" y="2.8" height="29.8182" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Common GND</text>
+ </g>
+</g>
+</g></g><g partID='854274160'><g transform='translate(114.482,334.827)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Main 5V Top</text>
+ </g>
+</g>
+</g></g><g partID='854274560'><g transform='translate(633.889,415.112)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">12V Fan</text>
+ </g>
+</g>
+</g></g><g partID='854274770'><g transform='translate(752.453,121.574)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">RED = Main 12V</text>
+ </g>
+</g>
+</g></g><g partID='854274790'><g transform='translate(752.453,159.44)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">YELLOW = Main 5V</text>
+ </g>
+</g>
+</g></g><g partID='854274860'><g transform='translate(840.986,235.707)' ><g>
+ <rect stroke-width="5.6" width="106.4" x="2.8" y="2.8" height="30.4" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">RPi5 via USB-C</text>
+ </g>
+</g>
+</g></g><g partID='854281250'><g transform='translate(227.815,121.099)' ><g>
+ <rect stroke-width="5.6" width="32.7316" x="2.8" y="2.8" height="29.6" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">10A </text>
+ </g>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="24.275" fill="#000000">Fuse</text>
+ </g>
+</g>
+</g></g><g partID='854281270'><g transform='translate(221.761,79.7233)' ><g>
+ <rect stroke-width="5.6" width="49.8873" x="2.8" y="2.8" height="20.8" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Main Switch</text>
+ </g>
+</g>
+</g></g><g partID='854281330'><g transform='translate(283.426,2.56845)' ><g>
+ <rect stroke-width="5.6" width="49.8873" x="2.8" y="2.8" height="20.8" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">External 12V</text>
+ </g>
+</g>
+</g></g><g partID='854281290'><g transform='translate(223.023,37.0262)' ><g>
+ <rect stroke-width="5.6" width="49.8873" x="2.8" y="2.8" height="20.8" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Select Switch</text>
+ </g>
+</g>
+</g></g><g partID='854281310'><g transform='translate(167.266,0)' ><g>
+ <rect stroke-width="5.6" width="38.7866" x="2.8" y="2.8" height="29.6" fill="#ffe9c8" stroke="#fabc4f"/>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="15.475" fill="#000000">Battery </text>
+ </g>
+ <g font-size="6.675" text-anchor="left" font-family="Droid Sans" fill="#000000" stroke="none">
+  <text x="8.8" y="24.275" fill="#000000">12V</text>
+ </g>
+</g>
+</g></g></svg>

@@ -1,42 +1,68 @@
-# Grabby - The Warehouse Robot
-#### By Jeremy Hendrikse and Julius Ortstadt
+# Grabby – Modular Autonomous Mobile Robot for Warehouse Research  
+**Authors:** Jeremy Hendrikse, Julius Ortstadt  
 
 ## Introduction
-This GitHub Repo holds all the necessary documents, codes and informations relative to the Grabby robot.\
-This project has been in development for the last two years as part of our Master studies in Robotics and Autonomous Systems at Polytech Nice-Sophia.
+This repository contains all software, hardware designs, and documentation related to **Grabby**, an autonomous mobile robot developed as a **proof of concept for warehouse automation and indoor autonomous navigation research**.
 
-> Note that the project is basically separated into two parts:
-> - The mobile base which is responsible for moving the entire robot. 
-> It also holds all the computational element of the robot, the battery etc.
-> - The lifting platform which is responsible for reaching the package that is to be retrieved. 
-> This platform can move up/down and forward/backward and uses different sensors to detect and retrieve the boxes.
+The project has been developed over a three-year period as part of the Master’s program in *Robotics and Autonomous Systems* at **Polytech Nice-Sophia**. The primary objective is not direct industrial deployment, but rather the exploration, integration, and evaluation of autonomous navigation techniques on a self-designed robotic platform.
 
-## Code section
-In this section you can find all the necessary codes that are needed to either achieve a specific function of the robot or to determine certain physical parameters of the robot. 
-For instance, the mobile base has an Excel sheet that we created to determine the relationship between the robot's speed and the applied PWM to the motors.\
-It also has all the necessary codes for mapping and navigation and other features.
-Also, there is all the code and development steps for the lifting mechanism and its associated functions.
+The system is intentionally modular and extensible, serving as a research and experimentation base for mapping, localization, navigation, and manipulation in structured indoor environments.
 
-## Hardware section
-The Hardware section contains all the different 3D and 2D models that are necessary to build the robot from scratch.
-Fusion360 and Inkscape were used to create these different objects.
+> The robot architecture is divided into two main subsystems:
+> - **Mobile Base**  
+>   Responsible for locomotion, power distribution, onboard computation, and autonomous navigation. It hosts the main computer, battery system, sensors, and motor controllers.
+> - **Lifting Platform**  
+>   A modular upper subsystem designed for package handling. It includes lifting and grabbing mechanisms as well as additional sensors, such as a stereo camera, to assist with perception and task execution.
 
-## Documentation section
-In this section, we grouped all of our research into how different this can and will be done on our robot as well as the components that we ordered for the robot itself.\
-Also, you can follow the evolution of our robot through our session and other reports.
+---
 
-In the *Research* folder, you can find all the different research topics and some software necessary to operate certain functionalities of the robot.\
-Additionally, a setup guide has been written. This document guides you through the setup process of the NVIDIA Jetson Nano so that you can operate the robot, this includes:
-- ROS1 Melodic setup.
-- Adding Arduino IDE and creating the connection between the two boards.
-- Installing and activating NoMachine to use the Jetson in a headless mode.
-- First use of the LiDAR
-- Some ROS1 tips:
-  - Creating a launch file
-  - Creating a workspace
-  - Working with ROS
-- Some useful links and documentations.
+## Software
+This section contains all software developed for the robot, covering low-level control, autonomy, and system integration.
 
+The mobile base software stack is built around **ROS 1 (Melodic)** and includes:
+- Teleoperation (wireless controller)
+- SLAM and mapping
+- Localization (AMCL)
+- Autonomous navigation
+- Sensor fusion (LiDAR and IMU)
+- Motor control and odometry
 
-## Thanks
-We would like to thank our professors at Polytech Nice-Sophia for their valued support and insight along the development of this project. 
+Due to the use of **Ubuntu 24.04 LTS on ARM64**, ROS 1 is executed inside a **Docker container**, ensuring compatibility and reproducibility despite ROS 1 being end-of-life. Detailed configuration steps are provided in the documentation.
+
+The repository also includes:
+- Code for Arduino Nano boards
+- Parameter tuning files
+- Auxiliary scripts and configuration tools
+
+---
+
+## Hardware
+The hardware section contains all design files required to reproduce the robot.
+
+Included are:
+- 3D models (Fusion 360)
+- 2D designs and schematics (Inkscape)
+- Mechanical adapters and modular interfaces
+
+The robot features a **modular chassis built from 20×20 mm aluminum profiles**, carbon-reinforced 3D-printed components, and a decentralized electronics architecture. All subsystems are designed for easy assembly, disassembly, and replacement.
+
+---
+
+## Documentation
+This section provides comprehensive documentation covering both hardware and software aspects of the project.
+
+It includes:
+- Detailed setup instructions for **Ubuntu Server 24.04 LTS** on Raspberry Pi 5
+- ROS 1 Melodic installation and configuration using Docker on ARM64
+- Mapping and navigation workspace setup
+- Sensor configuration and calibration
+- Power system design and safety considerations
+- Troubleshooting guides and known limitations
+
+All source code, CAD files, and supporting materials are available in this repository to facilitate reproducibility and further development.
+
+---
+
+## Acknowledgements
+The development of this project was made possible through the support of **Polytech Nice-Sophia**, which provided the necessary funding, equipment, and academic framework.  
+Special thanks are extended to the professors for their guidance in robotics, electronics, sensor fusion, and autonomous systems, which formed the foundation of this work.
