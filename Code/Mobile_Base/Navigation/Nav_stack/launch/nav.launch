@@ -1,16 +1,22 @@
 <!-- Launch file for the navigation with the Grabby warehouse robot -->
 
 <launch>
+    <!-- Map File -->
+    <arg name="map_file" default="/ros_shared/maps/map.yaml"/>
+
+    <!-- Load robot description and start state publisher (replaces static transforms) -->
+    <param name="robot_description" textfile="$(find navstack_pub)/urdf/grabby_robot.urdf" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> 
 
     <!-- //_____________// Transformation Configuration //_____________// -->
-    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.06 0 0.08 3.1416 0 0 base_link laser 30" />
-    <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.06 0 0.08 3.1416 0 3.1416 base_link laser 30" /> -->
-    <node pkg="tf" type="static_transform_publisher" name="imu_broadcaster" args="0.1175 0.095 -0.045 0 0 0 base_link imu 30" />
-    <node pkg="tf" type="static_transform_publisher" name="base_link_broadcaster" args="0 0 0.09 0 0 0 base_footprint base_link 30" />
+    <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.0645 0 0.130 0 0 3.1416 base_link laser 30" /> 
+    <node pkg="tf" type="static_transform_publisher" name="imu_broadcaster" args="0.1245 0.0895 0.0 0 0 0 base_link imu 30" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_broadcaster" args="0 0 0.025 0 0 0 base_footprint base_link 30" /> -->
     <!-- odom to base_footprint transform will be provided by the robot_pose_ekf node -->
     <!-- <node pkg="tf" type="static_transform_publisher" name="odom_to_base_footprint" args="0 0 0 0 0 0 odom base_footprint 30" />  -->
     <!-- map to odom will be provided by the AMCL -->
-    <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
+    <!-- <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" /> -->
+
 
     <!-- //_____________// Wheel Encoder Tick Publisher and Base Controller Using Arduino //_____________// -->
     <!-- Declare an argument for the serial port of the Arduino with a default value -->
@@ -18,7 +24,7 @@
 
     <!-- Needs the motor_controller_diff_drive_2.ino on the Arduino -->
     <!-- Subscribe: /cmd_vel -->
-    <!-- Publish: /right_ticks, /left_ticks -->
+    <!-- Publish: /m1_ticks, /m2_ticks -->
     <node pkg="rosserial_python" type="serial_node.py" name="serial_node">
         <param name="port" value="$(arg serial_port_arduino)"/>
         <param name="baud" value="115200"/>
@@ -30,9 +36,16 @@
     <!-- Publish: /odom_data_euler, /odom -->
     <node pkg="localization_data_pub" type="ekf_odom_pub" name="ekf_odom_pub" />
 
-    <!-- IMU Data Publisher using the MPU6050 -->
-    <!-- Publish: /imu_data -->
-    <node pkg="mpu6050_custom_driver" type="mpu6050_publisher.py" name="mpu6050_node" />
+    <!-- IMU Data Publisher Using the BNO055 IMU Sensor -->
+    <!-- Publish on /imu/data remaped to /imu_data -->
+    <node ns="imu" name="imu_node" pkg="imu_bno055" type="bno055_i2c_node" respawn="true" respawn_delay="2">
+        <param name="device" type="string" value="/dev/i2c-1"/>
+        <param name="address" type="int" value="40"/> <!-- 0x28 == 40 is the default for BNO055 -->
+        <param name="frame_id" type="string" value="imu"/>
+
+        <!-- REMAP /imu/data -> /imu_data -->
+        <remap from="data" to="/imu_data"/>
+    </node>
 
     <!-- Extended Kalman Filter from robot_pose_ekf Node-->
     <!-- Subscribe: /odom, /imu_data, /vo -->
@@ -40,7 +53,8 @@
     <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
         <param name="output_frame" value="odom"/>
         <param name="base_footprint_frame" value="base_footprint"/>
-        <param name="freq" value="30.0"/>
+        <!-- <param name="freq" value="30.0"/> -->
+        <param name="freq" value="10.0"/>
         <param name="sensor_timeout" value="1.0"/>
         <param name="odom_used" value="true"/>
         <param name="imu_used" value="true"/>
@@ -73,12 +87,7 @@
         <param name="frame_id" type="string" value="laser"/>
         <param name="inverted" type="bool" value="false"/>
         <param name="angle_compensate" type="bool" value="true"/>
-        <param name="inverted" type="bool" value="true"/>
-        <!-- <param name="inverted" type="bool" value="true"/> -->
     </node> 
-
-    <!-- Map File -->
-    <arg name="map_file" default="/home/julius_robo3/Navigation/maps/ros_maps/dolines/dolines_map.yaml"/>
 
     <!-- Map Server -->
     <!-- Publish: /map, /map_metadata -->
@@ -94,11 +103,15 @@
     <!-- Subscribe: /move_base_simple/goal -->
     <!-- Publish: /cmd_vel -->
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <remap from="move_base_simple/goal" to="goal_2d"/>
         <rosparam file="$(find navstack_pub)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
         <rosparam file="$(find navstack_pub)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
         <rosparam file="$(find navstack_pub)/param/local_costmap_params.yaml" command="load" ns="local_costmap" />
         <rosparam file="$(find navstack_pub)/param/global_costmap_params.yaml" command="load" ns="global_costmap" />
         <rosparam file="$(find navstack_pub)/param/base_local_planner_params.yaml" command="load" />
+    
+        <param name="controller_frequency" value="5.0" />
+        <param name="planner_frequency" value="1.0" />
     </node>
 
 

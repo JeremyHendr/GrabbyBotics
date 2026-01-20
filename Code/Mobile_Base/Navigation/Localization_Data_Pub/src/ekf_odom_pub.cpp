@@ -1,6 +1,6 @@
 /*
- * Project: Grabby the warehouse robot
- * Date: 06.02.2025
+ * Project: Grabby 
+ * Date: 17.12.2025
  * Adapted from: https://automaticaddison.com/how-to-publish-wheel-odometry-information-over-ros/
  * Description: Publishes odometry information created with wheel encoder ticks counts.
  *              Subscribe: 

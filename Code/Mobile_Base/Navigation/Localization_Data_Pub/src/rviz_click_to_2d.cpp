@@ -1,7 +1,7 @@
 /*
- * Project: Grabby the warehouse robot
+ * Project: Grabby
  * Code adapted from : https://automaticaddison.com/how-to-create-an-initial-pose-and-goal-publisher-in-ros/
- * Date: 03.02.2025
+ * Date: 17.12.2025
  * Description: 
  *      Convert initial pose and goal into usable format (from rviz)
  *      Subscribe:

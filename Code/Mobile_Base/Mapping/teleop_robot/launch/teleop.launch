@@ -1,0 +1,19 @@
+<!-- Launch file for teleop of Grabby robot -->
+<!-- Start nodes and communication with Arduino -->
+
+<launch>
+  <!-- Declare an argument for the serial port with a default value -->
+  <arg name="serial_port" default="/dev/ttyUSB0"/>
+
+  <!-- Start joy node -->
+  <node pkg="joy" type="joy_node" name="joy_node" output="screen"/>
+
+  <!-- Start teleop package -->
+  <node pkg="teleop_robot" type="teleop_robot" name="teleop_robot" output="screen" />
+        
+  <!-- Start Arduino communication (specify the port or use default) -->
+  <node pkg="rosserial_python" type="serial_node.py" name="serial_node">
+      <param name="port" value="$(arg serial_port)"/>
+      <param name="baud" value="115200"/>
+  </node>
+</launch>

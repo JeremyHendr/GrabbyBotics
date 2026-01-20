@@ -19,12 +19,12 @@ ros::NodeHandle nh;
 
 // Encoder output to Arduino Interrupt pin. Tracks the tick count.
 #define ENC_IN_LEFT_A 2
-#define ENC_IN_RIGHT_A 18
+#define ENC_IN_RIGHT_A 3
 
 // Other encoder output to Arduino to keep track of wheel direction
 // Tracks the direction of rotation.
-#define ENC_IN_LEFT_B 3
-#define ENC_IN_RIGHT_B 19
+#define ENC_IN_LEFT_B 8
+#define ENC_IN_RIGHT_B 11
 
 
 // True = Forward; False = Reverse
@@ -51,14 +51,14 @@ long currentMillis = 0;
 ////////////////// Motor Controller Variables and Constants ///////////////////
 
 // Motor A connections (Left motor / M1)
-const int enA = 45;
-const int in1 = 39;
-const int in2 = 40;
+const int enA = 5;
+const int in1 = 4;
+const int in2 = 7;
   
 // Motor B connections (Right motor / M2)
-const int enB = 44; 
-const int in3 = 42;
-const int in4 = 41;
+const int enB = 6; 
+const int in3 = 10;
+const int in4 = 9;
 
 // How much the PWM value can change each cycle
 const int PWM_INCREMENT = 1;
@@ -235,7 +235,12 @@ void calc_pwm_values(const geometry_msgs::Twist& cmdVel) {
   pwmLeftReq = -(K_P * cmdVel.linear.x + b);
   pwmRightReq = -(K_P * cmdVel.linear.x + b);
 
-  if (abs(cmdVel.linear.x) < 0.2123){
+  //if (abs(cmdVel.linear.x) < 0.2123){
+    //pwmLeftReq = 0;
+    //pwmRightReq = 0;
+  //}
+
+  if (abs(cmdVel.linear.x) < 0.10){
     pwmLeftReq = 0;
     pwmRightReq = 0;
   }

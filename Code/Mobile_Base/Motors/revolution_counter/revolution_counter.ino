@@ -8,14 +8,14 @@
 
 //-----------// Motor Pins //-----------//
 // Motor 1 control pins
-const int IN1=39; // Pin for control signal to change motor behaviour
-const int IN2=40; // Pin for control signal to change motor behaviour
-const int ENA=45; // Pin for PWM
+const int IN1=9; // Pin for control signal to change motor behaviour
+const int IN2=10; // Pin for control signal to change motor behaviour
+const int ENA=6; // Pin for PWM
 
 //-----------// Encoder Pins //-----------//
 // WARNING: Pins need to be pins that can be interrupted (see list for Arduino)
-#define enc_M1_A 2 // Yellow for encoder A
-#define enc_M1_B 3 // White for encoder B
+#define enc_M1_A 3 // Yellow for encoder A
+#define enc_M1_B 11 // White for encoder B
 
 //-----------// Encoder and Motor Properties //-----------//
 // Motor gear ratio
