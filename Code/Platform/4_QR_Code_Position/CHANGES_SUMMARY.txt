@@ -1,0 +1,142 @@
+# Summary of Changes
+
+## Files Modified
+
+### 1. `2_get_camera_parameters.py` (Calibration Script)
+**What changed**: Updated to save additional calibration parameters to the `.npz` file.
+
+**New parameters saved**:
+- `matrix_right`: Right camera intrinsic matrix
+- `matrix_left`: Left camera intrinsic matrix
+- `distortion_coef_right`: Right camera distortion coefficients
+- `distortion_coef_left`: Left camera distortion coefficients
+- `rotation_matrix`: Rotation between cameras
+- `translation_vector`: Translation between cameras (contains baseline info)
+- `rightRectification`: Right rectification matrix
+- `leftRectification`: Left rectification matrix
+- `rightProjection`: Right projection matrix
+- `leftProjection`: Left projection matrix
+
+**Action needed**: Re-run this script to update your calibration file with the new parameters.
+
+---
+
+### 2. `2_QR_code_position.py` (QR Code Detection Script)
+**What changed**: Complete rewrite with new features.
+
+#### New Features:
+
+1. **Automatic Parameter Extraction**
+   - Extracts camera matrices from `.npz` file
+   - Automatically computes focal length: `f = (K[0,0] + K[1,1]) / 2`
+   - Automatically computes principal point: `(cx, cy) = (K[0,2], K[1,2])`
+   - Extracts baseline from translation vector: `baseline = abs(T[0][0])`
+
+2. **Continuous Looping Until Match Found**
+   - Reads frames continuously after pressing 's'
+   - Detects QR codes in both left and right frames every frame
+   - **Stops looping** as soon as a matching pair is found
+   - Displays 3D position and waits for next 's' press
+
+3. **Improved 3D Calculation**
+   - Uses actual calibration parameters instead of approximations
+   - Formula: `Z = (f * baseline) / disparity`
+   - More accurate X, Y coordinates using principal point
+
+#### New Helper Functions:
+
+- `extract_focal_length(camera_matrix)`: Computes focal length
+- `extract_principal_point(camera_matrix)`: Computes principal point
+- `triangulate_qr_position()`: Enhanced 3D calculation using real parameters
+
+#### Usage:
+```
+Press 's' to start QR code detection loop
+(program continuously searches for matching QR codes)
+When found: displays 3D position and stops
+Press 's' again to search for another QR code
+Press 'e' to exit
+```
+
+---
+
+## How to Use
+
+### Step 1: Re-run Calibration (Important!)
+```bash
+cd ../Calibration
+python 2_get_camera_parameters.py
+```
+This will save the new parameters to `Saved_parameters/retification_informations.npz`
+
+### Step 2: Run the QR Code Detection
+```bash
+cd ../QR_Code
+python 2_QR_code_position.py
+```
+
+### Step 3: Detect QR Codes
+- Press 's' to start searching
+- Hold a QR code in front of your stereo cameras
+- When it appears in both frames, the program will display:
+  - QR code data
+  - Disparity (pixels)
+  - **3D Position** (X, Y, Z in mm relative to left camera)
+  - Total distance from camera origin
+
+---
+
+## What If Calibration File Doesn't Have New Parameters?
+
+The script will fall back gracefully:
+- It will print "✗ Camera matrices found" (or "✗ Baseline extracted")
+- The looping will still work but 3D calculations won't be available
+- Re-run the calibration script to add the missing parameters
+
+---
+
+## Coordinate System
+
+**Origin**: Left camera's optical center
+- **X-axis**: pointing right (positive = QR code on the right)
+- **Y-axis**: pointing down (positive = QR code below center)
+- **Z-axis**: pointing forward (positive = QR code in front of camera)
+
+**Example**: Position (100, -50, 500) means:
+- 100 mm to the right
+- 50 mm above the camera center
+- 500 mm away (distance)
+
+---
+
+## Key Improvements Over Previous Version
+
+| Feature | Before | After |
+|---------|--------|-------|
+| Parameter source | Hard-coded approximations | Extracted from calibration |
+| Looping behavior | Only when pressing 's' | Continuous until match found |
+| Focal length | `f = 500` (guessed) | Calculated from camera matrix |
+| Principal point | `(1280, 360)` (estimated) | Extracted from camera matrix |
+| Baseline | `60 mm` (guessed) | From translation vector |
+| 3D accuracy | Low (demo only) | High (real calibration data) |
+
+---
+
+## Troubleshooting
+
+**Q: "Warning: Could not load all calibration parameters"**
+A: Run `2_get_camera_parameters.py` again to update the calibration file
+
+**Q: No QR codes detected**
+A: Ensure the QR code is clearly visible in both camera frames
+
+**Q: 3D position looks wrong**
+A: Check that:
+1. Calibration was done properly
+2. Both cameras are actually a stereo pair
+3. Baseline distance is correct
+4. QR code is clearly visible in both frames
+
+**Q: Disparity is 0 or negative**
+A: QR code might be closer than the focal length or at infinity - try moving QR code in front of camera
+

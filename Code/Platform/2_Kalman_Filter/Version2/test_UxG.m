@@ -1,0 +1,72 @@
+D = 0.05;
+L = 0.20;
+rev_per_sec = 1/(pi*D);
+
+
+
+
+G = [(pi*D)/2 (pi*D)/2;
+        0         0;
+     (pi*D)/L (-pi*D)/L];
+
+Ts = 0.1; %sampling period
+T = 10; %Simulation duration
+t = 0:Ts:T;
+
+wL = rev_per_sec * ones(size(t));               % left wheel
+wR = rev_per_sec * ones(size(t));               % right wheel
+wR(t > 4 & t < 8) = 6;   % slow down right wheel
+
+U = [wR; wL];
+
+test = zeros(3,length(t));
+
+
+for k = 2:length(t)
+    test(:,k) = G*U(:,k);
+    % test(:,k) = [(pi*D*(wR(k)+wL(k)))/2;
+    %                 0;
+    %              (pi*D*(wR(k)-wL(k)))/L];
+
+     %true Vb speed
+    %true spi_dot angular speed
+    % true_state(2,k) = true_state(2,k-1) + true_state(3,k-1)*Ts;
+end
+
+
+
+% --- Plot Wheel speeds ---
+figure;
+subplot(3,1,1); hold on; grid on;
+% plot(t, true_state(1,:), 'g', 'DisplayName', 'true body speed');
+% plot(t, Y(1,:), 'r', 'DisplayName', 'IMU body speed');
+% plot(t, X_stored(1,:), 'b', 'DisplayName', 'Estimated body speed');
+plot(t, test(1,:), 'b', 'DisplayName', 'Estimated body speed');
+title('Vb, body frame speed');
+ylim([0 10]);
+xlabel('Time [s]');
+ylabel('Speed [m/s]');
+legend;
+
+subplot(3,1,2); hold on; grid on;
+% plot(t, true_state(2,:), 'g', 'DisplayName', 'true body orientation');
+% plot(t, Y(2,:), 'r', 'DisplayName', 'IMU body orientation');
+% plot(t, X_stored(2,:), 'b', 'DisplayName', 'Estimated body orientation');
+plot(t, test(2,:), 'b', 'DisplayName', 'Estimated body speed');
+title('Psi, body orientation');
+ylim([-3 1]);
+xlabel('Time [s]');
+ylabel('Psi [rad]');
+legend;
+
+subplot(3,1,3); hold on; grid on;
+% plot(t, true_state(3,:), 'g', 'DisplayName', 'true body angular speed');
+% plot(t, Y(3,:), 'r', 'DisplayName', 'IMU body angular speed');
+% plot(t, X_stored(3,:), 'b', 'DisplayName', 'Estimated body angular speed');
+plot(t, test(3,:), 'b', 'DisplayName', 'Estimated body speed');
+title('Psi_dot, body angular speed');
+ylim([-0.65 0.5]);
+xlabel('Time [s]');
+ylabel('Psi_dot [rad/s]');
+legend;
+
